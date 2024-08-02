@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit From</h1>
+    <%if(user&&user){%>
+        <form action="/UserUpadte/<%=user.id%>" method="post">
+        <input type="text" value="<%=user.firstname%>" name="firstname" />
+        <input type="text" value="<%=user.lastname%>" name="lastname"/>
+        <button>Update</button>
+    </form>
+        <%}else{%>
+            <p>User Not Found</p>
+            <%}%>
+</body>
+</html>

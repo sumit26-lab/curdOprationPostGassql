@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+</style>
+<body>
+    <h1>Hello Ejs</h1>
+  <%if(data.length){%>
+ <ul style="display: grid; justify-content: center; background-color: gray;">
+    <%data.forEach(function(item){%>
+        <li style="width: 180px; justify-content: space-between; color: aliceblue;"><label>FirstName:  </label>
+            <%=item.firstname%>
+            <label>LastName :</label>
+            <%=item.lastname%>
+            <a href="/edit/<%=item.id%>">Edit</a>
+            <a href="/deleted/<%=item.id%>">Deleted</a>
+        
+        </li>
+        <%})%>
+ </ul>
+<%}else{%>
+    <p>data Not found</p>
+    <%}%>
+    <h2>Add User</h2>
+    <form action="/adduser" method="POST">
+        <label>First Name: <input type="text" id="firstname" name="firstname" required></label><br>
+        <label>Last Name: <input type="text" name="lastname" required></label><br>
+        <button type="submit">Add User</button>
+    </form>
+</html>
